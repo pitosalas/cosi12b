@@ -1,0 +1,26 @@
+Hi everyone!
+
+Ryan, the TAs and I have been working hard getting things ready for the semester. (By the way, Ryan is Ryan Marcus, our lead TA. He is a Computer Science PhD student. He's great and super knowledgable and you will find that he's super helpful and approachable.) I am excited to meet all of you and get going. I think it's going to be a great semester!
+
+I have a few tidbits that I wanted to share with you!
+As you can imagine in addition to the fun of teaching it, a 100 student course brings with it some logistical challenges for me and especially the TAs. Ryan has spent a lot of time writing up instructions for the assignments and designing a workflow for checking them and giving you feedback. It's can be more complicated than you realize!
+
+Even though the pre-work videos used NetBeans and not Eclipse, as Ryan has said, this course will require you to use Eclipse. I hate having strict rules, but that is one of them. You must submit your homework in the specific format required.
+
+The reason is clear from Ryan's comments. With 100 students we have to automate homework submission and grading as much as possible If the homeworks are not submitted in exactly the format required they literally might be rejected. Also realize that some of you (many of you) will hit mysterious errors or other obstacles. Our TAs will be expert in helping you when you use Eclipse.
+
+You will get to know that I am not a super serious person but that I do care deeply about teaching and am an avid promoter of how much fun programming can be (let alone the more serious reasons why it's an important thing to learn.) I try to make expectations as clear as I possibly can, and try to be fair and forthright and transparent.
+
+I have updated the syllabus with more specifics about grading and homeworks. Please take a look: http://cosi12b-s2016.s3-website-us-west-2.amazonaws.com
+
+If you have friends taking the other 12b section or who took it last year, there will be some significant differences. While the textbook and the material we are covering is the same, but the approach has some small differences. We will have fewer exams (yay!) but more homeworks (boo!). The homeworks and exams will be different from previous years. Also the grading will be different, with a stronger emphasis on class participation and actual programming.
+
+All in all our focus is very much on giving you practice programming and doing everything we can to make you be successful in this course. By the way, please pay attention to our academic honesty standards (http://cosi12b-s2016.s3-website-us-west-2.amazonaws.com/content/resources/honesty.md/) We will be strict about them.
+
+If you haven't spent a few hours on the Lynda course that I assigned as pre-work please do so between now and Wednesday. It will really be a helpful review!
+
+So in summary: 1) Be considerate of the fact that this is a large course and please let's be collaborative and flexible; 2) Sorry but we are really requiring Eclipse and 3) Realize that our section of 12b is similar but not 100% identical to previous editions.
+
+Ok that's all I have for now. Please feel free to post questions to the student/teacher forum or in response to this post. See you Wednesday, but you might hear from me before that.
+
+Pito

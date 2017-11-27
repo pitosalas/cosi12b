@@ -1,0 +1,48 @@
+---
+title: Space Game Example
+---
+#### Summary
+Here I describe a 2d game that we are going to try to design and implent in Java. It's just a sample so don't expect it to be a fun game but hopefully it will illustrtate how to apply what we are learning.
+
+The general pattern that I will be following can be used for any game or simulation. It's cnot necessarily the best one but a good one from the point of view of explaining and teaching.
+
+#### Elements of the game
+* The game is played in a square (n by n) grid of positions called quadrants. All of the entities in that game are placed somewhere on that grid. They are all idealized as taking up just one position in the grid, so whether its a spaceship or a star, we say that they take up one position only.
+* Within this space there are the following possible elements
+  * Stars - Which are immovable and don't do anything
+  * Planets - Which are immovable, but can house people. If people are on a planet that also has a spaceship that has room on it, in one turn they all enter that spaceship. One planet is designated as the "Home" planet.
+  * Spaceships - Which can move, and can contain between 1 and 2 people. Spacecships can be flown only when they contain at least one person. Spaceships travel faster if they contain more people. They travel at a speed of (n * number_of_people) / 25 units per hour.
+  * People - Who are either on a planet or in a spaceship
+
+#### Beginning of Time
+* We use n = 100 in the first implementation
+* When the game first begins:
+  * The space has n*n quadrants
+  * We populate the space based on a series of standard probabilities
+    * Any quadrant
+  * We create (n / 20) stars in random locations, but not on top of any other entity
+  * We create (n / 20) planets in random location, but not on top of any other entity
+  * We create (n / 25) people and place them each on a different planet
+  * We create (n / 10) spaceships and place them randomly on planets that have at least one person and no spaceships yet
+
+#### Hours
+* The game proceeds from time 0, up to until the game ends or runs out of time
+* Each hour the game will apply the strategy to all the entities
+ * For each person, if they are on a planet, and the planet has a spaceship that has space, they leave the planet (surface) and enter the spaceship.
+ * For each spaceship
+   * If it is on a planet, and has more than one passenger, then it sets course to it's destination
+   * If it traveling, then it moves according to its speed
+   * If the resultant location is a star, then the spaceship blows up and leaves the game
+   * If the resultant location is a planet, and the spaceship has a free seat, and the planet has at least one person on the ground, then the spaceship lands
+   * If it has arrived at the "home" planet, then it lands on the planet.
+
+
+### Behaviors
+
+#### Spaceships
+* Have a capacity of SPACESHIP_CAPACITY
+* If a spaceship is on the surface of a planet and there are people there they will load onto the spaceship one at a time
+* If a spaceship is on a the surface, and it has enough people aboard, it will launch from the planet.
+
+#### Planets
+* If a planet has people on it, and a spaceship, and the spaceship has room, and this is not the home planet, then as many people as possible load onto the spaceship

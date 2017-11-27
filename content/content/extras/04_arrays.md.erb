@@ -1,0 +1,34 @@
+---
+title: Arrays
+---
+#### What is an "array"?
+* All(most) all programming languages have them
+* An object that stores many values of the **same type**
+  * An index is a like a subscript
+  * An array is like a matrix
+* Each value is accessed by an **index**
+  * Each floor in a building has a number
+  * Each street in New York City has a number
+  * More examples?
+* **CONFUSING**: Indexes start at zero!!!
+
+#### Example
+
+<%= code_begin %>
+int[] scores = new int[3];
+score[0] = 100;
+score[1] = 200;
+score[2] =300;
+
+int average;
+average = (score[0]+score[1]+score[2])/3
+System.out.println("The average is: " + average);
+
+<%= code_end %>
+
+#### Declaration
+* `int grade[] = new int[30];`
+* So, \<type\> \<varname\> = new \<type\>[\<arraysize\>]`
+
+<%= callout("NB", " All elements of an array are of the same datatype") %>
+<%= callout("NB", " You have to decide how many elements the array has ahead of time") %>
