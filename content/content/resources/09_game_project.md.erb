@@ -7,7 +7,7 @@ Here I describe a 2d game that we are going to try to design and implent in Java
 The general pattern that I will be following can be used for any game or simulation. It's cnot necessarily the best one but a good one from the point of view of explaining and teaching.
 
 #### Elements of the game
-* The game is played in a square (n by n) grid of positions called quadrants. All of the entities in that game are placed somewhere on that grid. They are all idealized as taking up just one position in the grid, so whether its a spaceship or a star, we say that they take up one position only.
+* The game is played in space which is divided into quadrants defined by two coordinates, x and y. (Don't immediately assume that you need a two dimensional array!) All of the entities in that game are located in a quadrant, whether its a spaceship or a star, we say that they take up one quadrant only.
 * Within this space there are the following possible elements
   * Stars - Which are immovable and don't do anything
   * Planets - Which are immovable, but can house people. If people are on a planet that also has a spaceship that has room on it, in one turn they all enter that spaceship. One planet is designated as the "Home" planet.
@@ -15,15 +15,14 @@ The general pattern that I will be following can be used for any game or simulat
   * People - Who are either on a planet or in a spaceship
 
 #### Beginning of Time
-* We use n = 100 in the first implementation
+* Create Space of a certain size
 * When the game first begins:
   * The space has n*n quadrants
-  * We populate the space based on a series of standard probabilities
-    * Any quadrant
-  * We create (n / 20) stars in random locations, but not on top of any other entity
-  * We create (n / 20) planets in random location, but not on top of any other entity
-  * We create (n / 25) people and place them each on a different planet
-  * We create (n / 10) spaceships and place them randomly on planets that have at least one person and no spaceships yet
+  * We populate the space randomly
+  * We create stars in random locations, but not on top of any other entity
+  * We create planets in random location, but not on top of any other entity
+  * We create  people and place them each on a different planet
+  * We create spaceships and place them randomly in space
 
 #### Hours
 * The game proceeds from time 0, up to until the game ends or runs out of time
@@ -36,13 +35,22 @@ The general pattern that I will be following can be used for any game or simulat
    * If the resultant location is a planet, and the spaceship has a free seat, and the planet has at least one person on the ground, then the spaceship lands
    * If it has arrived at the "home" planet, then it lands on the planet.
 
+### Key classes
 
-### Behaviors
+#### SpaceGame
+This is the top level game class. It is a singleton, and contains the public static main() method that makes the whole game go. It also has a reference to the singleton Space class.
 
-#### Spaceships
-* Have a capacity of SPACESHIP_CAPACITY
-* If a spaceship is on the surface of a planet and there are people there they will load onto the spaceship one at a time
-* If a spaceship is on a the surface, and it has enough people aboard, it will launch from the planet.
+#### Quadrant
+Represents a  quadrant, specifically the x and y for the quadrant. Knows how to compute distance between two quadrants and other simple geometry.
 
-#### Planets
-* If a planet has people on it, and a spaceship, and the spaceship has room, and this is not the home planet, then as many people as possible load onto the spaceship
+#### Star
+Represents a star. Located at a certain quadrant. Can never move.
+
+#### Planet
+Represents a planet. Located at a certain qaudrant. Can never move. If a planet has people on it, and a spaceship, and the spaceship has room, and this is not the home planet, then as many people as possible load onto the spaceship
+
+#### Space
+Keeps track of all stars, planets, spaceships, etc. To create a new play space it can generate a series of stars etc. at random. Ensures that two incompatible things are not placed in the same quadrant.
+
+#### Spaceship
+Keeps track of the spaceships location in space, how many passengers are on them, and handles motion as. If a spaceship is on the surface of a planet and there are people there they will load onto the spaceship one at a time. If a spaceship is on a the surface, and it has enough people aboard, it will launch from the planet.
