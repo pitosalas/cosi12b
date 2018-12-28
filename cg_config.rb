@@ -7,11 +7,11 @@ AWS_BUCKET = "cosi12b"
 CONTENT_PATH = "/mydev/cosi12b"
 
 # Copyright string
-COPYRIGHT_STRING = "Copyright (2013-2018) R. Pito Salas, pitosalas@brandeis.edu"
+COPYRIGHT_STRING = "Copyright (2013-2019) R. Pito Salas, pitosalas@brandeis.edu"
 
 # Course short name
 COURSE_SHORT_NAME = "Cosi12b"
-COURSE_LONG_NAME = "Advanced Programming Techniques (2018)"
+COURSE_LONG_NAME = "Advanced Programming Techniques (2019)"
 COURSE_ABBREV = "12b"
 
 # Sections in the right hand margin of the page
